@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'supers',
+    'super_types'
 ]
 
 MIDDLEWARE = [
@@ -67,7 +70,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'heroes_villains_project.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
 
 
 # Password validation
