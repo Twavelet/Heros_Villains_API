@@ -28,12 +28,12 @@ def super_type_detail(request, pk):
         serializer = SuperTypeSerializer(super_type)
         return Response(serializer.data)
 
-    elif request.data == 'PUT':
+    elif request.method == 'PUT':
         serializer = SuperTypeSerializer(super_type, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    elif request.data == 'DELETE':
+    elif request.method == 'DELETE':
         super_type.delete()
         return Response(status.HTTP_204_NO_CONTENT)
